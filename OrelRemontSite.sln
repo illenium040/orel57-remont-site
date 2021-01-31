@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrelRemontSite", "OrelRemontSite.csproj", "{84E6EF5C-F902-4218-814D-E69AF3D33F22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84E6EF5C-F902-4218-814D-E69AF3D33F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E6EF5C-F902-4218-814D-E69AF3D33F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E6EF5C-F902-4218-814D-E69AF3D33F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E6EF5C-F902-4218-814D-E69AF3D33F22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5798038E-E8F4-432A-A47C-2F9469B858A7}
+	EndGlobalSection
+EndGlobal
