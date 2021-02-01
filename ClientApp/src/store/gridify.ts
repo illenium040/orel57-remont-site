@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const imagesLoaded = function (conatiner: any, cb: any) {
-    let images = conatiner.find('img');
+    let images = conatiner.find("img");
     let count = images.length;
     if (count == 0) cb();
     for (let i = 0, length = images.length; i < length; i++) {

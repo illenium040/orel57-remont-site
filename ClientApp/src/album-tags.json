@@ -1,0 +1,38 @@
+{
+    "tags": [{
+            "tagName": "Потолки",
+            "tagId": "ceils",
+            "album": "jJmrvg7"
+        },
+        {
+            "tagName": "Двери",
+            "tagId": "doors",
+            "album": "c8y5qRf"
+        },
+        {
+            "tagName": "Мебель",
+            "tagId": "furniture",
+            "album": "KyBZVf2"
+        },
+        {
+            "tagName": "Ремонтно-отделочные работы",
+            "tagId": "works",
+            "album": "jLjzjC4"
+        },
+        {
+            "tagName": "Двери, окна и конструкции ПВХ",
+            "tagId": "PVC",
+            "album": "RJyBrNT"
+        },
+        {
+            "tagName": "Фасадные работы",
+            "tagId": "facade-works",
+            "album": "CxtMqX4"
+        },
+        {
+            "tagName": "Строительство",
+            "tagId": "buildings",
+            "album": "JGYJWxw"
+        }
+    ]
+}

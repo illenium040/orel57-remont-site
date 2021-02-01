@@ -42,6 +42,7 @@ class Portfolio extends React.Component<{ id: string }, IPortfolioState> {
                         <h2 className="subtitle">Фотографии с наших объектов</h2>
 
                         <div style={{ textAlign: "center" }} className="animated fadeInRight delay-0-5">
+
                             <Album images={[
                                 require("../assets/img/portfolio/img1.jpg"),
                                 require("../assets/img/portfolio/img2.jpg"),
@@ -49,7 +50,8 @@ class Portfolio extends React.Component<{ id: string }, IPortfolioState> {
                                 require("../assets/img/portfolio/img4.jpg"),
                                 require("../assets/img/portfolio/img5.jpg"),
                                 require("../assets/img/portfolio/img6.jpg")
-                            ]} />
+                            ]}
+                                wrapperClassName="col-lg-4 col-md-4 col-sm-6 col-xs-12" />
                             {this.renderRedirect()}
                             <a onClick={this.setRedirect} className="btn btn-primary btn-lg">Показать все</a>
                         </div>

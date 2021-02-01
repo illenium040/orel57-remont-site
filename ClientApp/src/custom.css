@@ -118,18 +118,22 @@
     }
 }
 
-.album-container img {
-    object-fit: cover;
-    width: 350px;
-    height: 250px;
+#portfolioItems {
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 
-.album-container .portfolio-item:hover .overlay {
-    position: absolute;
-    top: 0;
-    width: 350px;
-    height: 250px;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: block;
+#tagButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+#tagButtonsContainer .btn {
+    margin: 10px;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    height: auto;
 }
