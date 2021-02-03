@@ -3,7 +3,7 @@ import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLi
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTools, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { CompanyName } from './ConstInfo';
+import { CompanyName } from '../../lib/constInfo';
 
 export interface ISectionInfo {
     id: string;

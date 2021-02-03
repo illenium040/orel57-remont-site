@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container } from 'reactstrap';
 import NavMenu from './NavMenu';
-import { sections } from './ConstInfo';
+import { sections } from '../../lib/constInfo';
 
 
 export default (props: { children?: React.ReactNode }) => (

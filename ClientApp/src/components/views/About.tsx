@@ -1,5 +1,5 @@
 import React from 'react';
-import Album from './sub-components/Album';
+import Album from '../Album';
 
 export interface IAboutProps {
 
@@ -24,7 +24,7 @@ class About extends React.Component<{ id: string }, IAboutState> {
                                 Имеем 20-ти летний опыт работы в данной сфере услуг и большое количество довольных клиентов.
                             </p>
                         </div>
-                        <img className="col-md-4 col-md-4 col-sm-12 col-xs-12" src={require("../assets/img/about/graph.png")} alt="" />
+                        <img className="col-md-4 col-md-4 col-sm-12 col-xs-12" src={require("../../assets/img/about/graph.png")} alt="" />
                     </div>
                 </div>
             </section>

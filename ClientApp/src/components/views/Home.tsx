@@ -6,7 +6,7 @@ import ServicesDescription from './ServicesDescription';
 import Portfolio from './Portfolio';
 import Contacts from './Contacts';
 import About from './About';
-import { sections } from './ConstInfo';
+import { sections } from '../../lib/constInfo';
 
 
 const Home = () => (

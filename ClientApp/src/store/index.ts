@@ -1,4 +1,3 @@
-import * as Counter from './Counter';
 import * as Album from './Album';
 
 // The top-level state object

@@ -17,13 +17,20 @@ namespace OrelRemontSite.Controllers
 		[HttpGet("{album}/{page}")]
         public async Task<string> Get(string album, int page)
         {
-			return await PostHTTPRequestAsync("https://postimg.cc/json", new Dictionary<string, string>
+			try
+			{
+				return await PostHTTPRequestAsync("https://postimg.cc/json", new Dictionary<string, string>
 			{
 				{ "action", "list" },
 				{ "album", album },
 				{ "page", $"{page}"},
 				{ "offset", "0"}
 			});
+			}
+			catch (Exception e)
+            {
+				return $"{e.Message}, {e.Source}";
+            }
         }
 
 		private async Task<string> PostHTTPRequestAsync(string url, Dictionary<string, string> data)

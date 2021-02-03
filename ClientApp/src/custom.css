@@ -121,7 +121,7 @@
 #portfolioItems {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 #tagButtonsContainer {
@@ -136,4 +136,16 @@
     font-size: 16px;
     overflow-wrap: break-word;
     height: auto;
+}
+
+.portfolio-item {
+    visibility: collapse;
+}
+
+.album-loading {
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    width: 10%;
+    height: 10%;
 }

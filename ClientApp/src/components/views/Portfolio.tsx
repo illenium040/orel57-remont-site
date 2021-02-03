@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Album from './sub-components/Album';
+import Album from '../Album';
 
 export interface IPortfolioProps {
 
@@ -44,12 +44,12 @@ class Portfolio extends React.Component<{ id: string }, IPortfolioState> {
                         <div style={{ textAlign: "center" }} className="animated fadeInRight delay-0-5">
 
                             <Album images={[
-                                require("../assets/img/portfolio/img1.jpg"),
-                                require("../assets/img/portfolio/img2.jpg"),
-                                require("../assets/img/portfolio/img3.jpg"),
-                                require("../assets/img/portfolio/img4.jpg"),
-                                require("../assets/img/portfolio/img5.jpg"),
-                                require("../assets/img/portfolio/img6.jpg")
+                                require("../../assets/img/portfolio/img1.jpg"),
+                                require("../../assets/img/portfolio/img2.jpg"),
+                                require("../../assets/img/portfolio/img3.jpg"),
+                                require("../../assets/img/portfolio/img4.jpg"),
+                                require("../../assets/img/portfolio/img5.jpg"),
+                                require("../../assets/img/portfolio/img6.jpg")
                             ]}
                                 wrapperClassName="col-lg-4 col-md-4 col-sm-6 col-xs-12" />
                             {this.renderRedirect()}

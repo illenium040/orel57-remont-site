@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ISectionInfo } from './NavMenu';
+import { ISectionInfo } from '../components/views/NavMenu';
 import * as Icons from '@fortawesome/free-solid-svg-icons';
 
 export const CompanyName = () =>

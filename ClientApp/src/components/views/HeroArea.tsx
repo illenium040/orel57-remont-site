@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CompanyName } from './ConstInfo';
+import { CompanyName } from '../../lib/constInfo';
 
 export interface IHeroAreaProps {
 
@@ -21,7 +21,7 @@ class HeroArea extends React.Component<{ id: string }, IHeroAreaState> {
                             <h2 className="subtitle">Ремонт жилых и нежилых помещений</h2>
 
                             <img className="col-md-6 col-sm-6 col-xs-12 animated fadeInLeft"
-                                src={require("../assets/img/house.png")} alt="" />
+                                src={require("../../assets/img/house.png")} alt="" />
 
                             <div className="col-md-6 col-sm-6 col-xs-12 animated fadeInRight delay-0-5">
                                 <p className="lead">
@@ -30,8 +30,6 @@ class HeroArea extends React.Component<{ id: string }, IHeroAreaState> {
                                     • Монтаж натяжных потолков <br />
                                     • Изготовление корпусной мебели и т.д. <br />
                                 </p>
-                                {/* <a href="#" className="btn btn-common btn-lg">Donload Now!</a>
-                                <a href="#" className="btn btn-primary btn-lg">Learn More</a> */}
                             </div>
                         </div>
                     </div>

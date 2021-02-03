@@ -19,7 +19,7 @@ class ServicesDescription extends React.Component<{ id: string }, IServicesDescr
 
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInLeft">
                             <div className="service-item">
-                                <img src={require("../assets/img/furniture.png")} alt="" />
+                                <img src={require("../../assets/img/furniture.png")} alt="" />
                                 <p className="h3">Изготовление мебели</p>
                                 <p>Изготовление, сборка и монтаж мебели</p>
                             </div>
@@ -27,7 +27,7 @@ class ServicesDescription extends React.Component<{ id: string }, IServicesDescr
 
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInLeft">
                             <div className="service-item">
-                                <img src={require("../assets/img/window1.png")} alt="" />
+                                <img src={require("../../assets/img/window1.png")} alt="" />
                                 <p className="h3">Установка ПВХ окон</p>
                                 <p>Установка ПВХ окон, дверей и конкструкций</p>
                             </div>
@@ -35,7 +35,7 @@ class ServicesDescription extends React.Component<{ id: string }, IServicesDescr
 
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInLeft">
                             <div className="service-item">
-                                <img src={require("../assets/img/ceil.png")} alt="" />
+                                <img src={require("../../assets/img/ceil.png")} alt="" />
                                 <p className="h3">Натяжные потолки</p>
                                 <p>Монтаж многоуровневых натяжных потолков, фотопечать</p>
                             </div>
@@ -45,21 +45,21 @@ class ServicesDescription extends React.Component<{ id: string }, IServicesDescr
                     <div className="row" style={{ padding: "0px" }}>
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInLeft">
                             <div className="service-item">
-                                <img src={require("../assets/img/laminat.png")} alt="" />
+                                <img src={require("../../assets/img/laminat.png")} alt="" />
                                 <p className="h3">Напольные покрытия</p>
                                 <p>Монтаж стяжки и напольных покрытий</p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInLeft">
                             <div className="service-item">
-                                <img src={require("../assets/img/door.png")} alt="" />
+                                <img src={require("../../assets/img/door.png")} alt="" />
                                 <p className="h3">Установка дверей</p>
                                 <p>Установка межкомнатных дверей и дверей сейфов</p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInLeft">
                             <div className="service-item">
-                                <img src={require("../assets/img/malyar.png")} alt="" />
+                                <img src={require("../../assets/img/malyar.png")} alt="" />
                                 <p className="h3">Штукатурно-малярные работы</p>
                                 <p>Штукатурка, шпатлевка, обои, потолочный плинтус</p>
                             </div>
