@@ -1,22 +1,23 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Album from '../Album';
+import { ISectionInfo } from '../../lib/Section';
 
-export interface IPortfolioProps {
-
+export interface PortfolioProps {
+    sectionInfo: ISectionInfo;
 }
 
 export interface IPortfolioState {
     redirect: boolean;
 }
 
-class Portfolio extends React.Component<{ id: string }, IPortfolioState> {
+class Portfolio extends React.Component<PortfolioProps, IPortfolioState> {
 
     private redirectToAlbum() {
         return <Redirect to="/album" />;
     }
 
-    public constructor(props: { id: string }) {
+    public constructor(props: PortfolioProps) {
         super(props);
         this.state = {
             redirect: false
@@ -35,7 +36,7 @@ class Portfolio extends React.Component<{ id: string }, IPortfolioState> {
 
     public render() {
         return (
-            <section id={this.props.id}>
+            <section id={this.props.sectionInfo.id}>
                 <div className="container">
                     <div className="row">
                         <h1 className="title">Альбом</h1>

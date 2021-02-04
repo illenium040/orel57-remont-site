@@ -1,17 +1,14 @@
 import React from 'react';
+import { ISectionInfo } from '../../lib/Section';
 
-export interface IServicesDescriptionProps {
-
+export interface ServicesDescriptionProps {
+    sectionInfo: ISectionInfo;
 }
 
-export interface IServicesDescriptionState {
-
-}
-
-class ServicesDescription extends React.Component<{ id: string }, IServicesDescriptionState> {
+class ServicesDescription extends React.Component<ServicesDescriptionProps> {
     public render() {
         return (
-            <section id={this.props.id}>
+            <section id={this.props.sectionInfo.id}>
                 <div className="container text-center">
                     <div className="row">
                         <h1 className="title">Чем мы занимаемся</h1>

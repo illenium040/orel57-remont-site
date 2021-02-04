@@ -16,16 +16,10 @@ export class PostImageJson extends Serializable {
     public has_page_next: boolean = false;
     @jsonProperty(String)
     public status_txt: string = "";
-}
 
-export interface SiteAlbumState {
-    json?: PostImageJson[];
-    isLoading?: boolean;
-    images?: Array<string>;
-}
-
-interface ILoadAlbumAction<T extends Serializable> {
-    (data: T): Promise<void>;
+    public getImages(): string[] {
+        return this.images.map((value, index) => 'https://i.postimg.cc/' + `${value[1]}/${value[2]}.${value[3]}`);
+    }
 }
 
 class AlbumPageController {
@@ -81,6 +75,11 @@ class AlbumPageController {
     }
 }
 
+export interface SiteAlbumState {
+    json?: PostImageJson[];
+    isLoading?: boolean;
+    images?: Array<string>;
+}
 
 class SiteAlbum extends React.Component<{}, SiteAlbumState> {
 
@@ -112,7 +111,7 @@ class SiteAlbum extends React.Component<{}, SiteAlbumState> {
             const parsed = new PostImageJson().fromJSON(response.data);
             this.setState(state => {
                 const jsonArray = state.json!.concat(parsed);
-                const images = state.images!.concat(this.getImages(parsed));
+                const images = state.images!.concat(parsed.getImages());
                 return { images: images, json: jsonArray, isLoading: false };
             });
             if (parsed.has_page_next)
@@ -130,17 +129,6 @@ class SiteAlbum extends React.Component<{}, SiteAlbumState> {
         this.setState({ isLoading: true, json: [], images: [] });
         this._albumPages.reset(event.currentTarget.id);
         this.ensureDataFetched();
-    }
-
-
-    private getImages(json: PostImageJson) {
-        const images: Array<string> = [];
-        for (let i = 0; i < json.images.length; i++) {
-            const element = json.images[i];
-            images.push('https://i.postimg.cc/'
-                + `${element[1]}/${element[2]}.${element[3]}`);
-        }
-        return images;
     }
 
     private renderTagsButtons() {

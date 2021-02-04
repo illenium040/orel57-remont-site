@@ -1,19 +1,15 @@
 import * as React from 'react';
 import { CompanyName } from '../../lib/constInfo';
+import { ISectionInfo } from '../../lib/Section';
 
-export interface IHeroAreaProps {
-
+export interface HeroAreaProps {
+    sectionInfo: ISectionInfo;
 }
 
-export interface IHeroAreaState {
-
-}
-
-class HeroArea extends React.Component<{ id: string }, IHeroAreaState> {
-
+class HeroArea extends React.Component<HeroAreaProps> {
     public render() {
         return (
-            <section id={this.props.id}>
+            <section id={this.props.sectionInfo.id}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

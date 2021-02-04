@@ -1,7 +1,5 @@
-import { type } from 'jquery';
 import React from 'react';
 import Lightbox from 'react-image-lightbox';
-import Modal from 'react-modal';
 import $ from 'jquery';
 
 type LightboxWrapperProps = {

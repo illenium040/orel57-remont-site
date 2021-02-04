@@ -1,25 +1,47 @@
 import * as React from 'react';
+import axios from 'axios';
+import $ from 'jquery';
+import { ISectionInfo } from '../../lib/Section';
 
-export interface IContactsProps {
-
+export interface ContactsProps {
+    sectionInfo: ISectionInfo;
 }
 
-export interface IContactsState {
-
+interface IEmailForm {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    phoneNumber: string;
 }
 
-class Contacts extends React.Component<{ id: string }, IContactsState> {
+
+class Contacts extends React.Component<ContactsProps> {
+
+    private submit(e: React.FormEvent) {
+        e.preventDefault();
+        const data: IEmailForm = {
+            name: $("input[name='name']").val() as string,
+            email: $("input[name='email']").val() as string,
+            message: $("textarea[name='message']").val() as string,
+            subject: $("input[name='subject']").val() as string,
+            phoneNumber: $("input[name='phone']").val() as string
+        };
+        axios.post(`${window.origin}/email`, data).then((response) => {
+            console.log(response);
+        });
+    }
+
     public render() {
         return (
-            <section id={this.props.id}>
+            <section id={this.props.sectionInfo.id}>
                 <div className="container text-center">
                     <div className="row">
                         <h1 className="title">Свяжитесь с нами</h1>
 
                         <h2 className="subtitle">Опишите Вашу проблему</h2>
 
-
-                        <form role="form" className="contact-form" method="post">
+                        <form role="form" className="contact-form" method="post" onSubmit={this.submit.bind(this)}>
                             <div className="container col-md-offset-3 col-md-6 wow fadeInLeft" data-wow-delay=".5s">
                                 <div className="form-group">
                                     <div className="controls">
@@ -33,12 +55,15 @@ class Contacts extends React.Component<{ id: string }, IContactsState> {
                                 </div>
                                 <div className="form-group">
                                     <div className="controls">
+                                        <input type="tel" className="form-control phone" placeholder="Номер телефона" name="phone" />
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <div className="controls">
                                         <input type="text" className="form-control requiredField" placeholder="Тема" name="subject" />
                                     </div>
                                 </div>
-
                                 <div className="form-group">
-
                                     <div className="controls">
                                         <textarea rows={7} className="form-control" placeholder="Ваше сообщение" name="message"></textarea>
                                     </div>

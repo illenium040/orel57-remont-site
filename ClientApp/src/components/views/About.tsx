@@ -1,18 +1,14 @@
 import React from 'react';
-import Album from '../Album';
+import { ISectionInfo } from '../../lib/Section';
 
-export interface IAboutProps {
-
+export interface AboutProps {
+    sectionInfo: ISectionInfo;
 }
 
-export interface IAboutState {
-
-}
-
-class About extends React.Component<{ id: string }, IAboutState> {
+class About extends React.Component<AboutProps> {
     public render() {
         return (
-            <section id={this.props.id} className="wow animated fadeInRight">
+            <section id={this.props.sectionInfo.id} className="wow animated fadeInRight">
                 <div className="container">
                     <div className="row">
                         <h1 className="title">Немного о нас</h1>

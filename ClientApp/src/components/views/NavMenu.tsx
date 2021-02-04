@@ -1,27 +1,32 @@
 import * as React from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTools, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { CompanyName } from '../../lib/constInfo';
+import { ISectionInfo, FirstPageSections } from '../../lib/Section';
 
-export interface ISectionInfo {
+
+export interface NavMenuProps {
     id: string;
-    value: string;
-    icon: IconDefinition;
 }
 
-export interface INavMenuProps {
-    id: string;
-    sections: Array<ISectionInfo>;
+export interface NavMenuState {
+    isOpen: boolean;
+    sections?: ISectionInfo[];
 }
 
-export default class NavMenu extends React.PureComponent<INavMenuProps, { isOpen: boolean }> {
-    public constructor(props: INavMenuProps) {
+export default class NavMenu extends React.PureComponent<NavMenuProps, NavMenuState> {
+    public constructor(props: NavMenuProps) {
         super(props);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            sections: []
         };
+    }
+
+    public componentDidMount() {
+        this.setState({
+            isOpen: false,
+            sections: FirstPageSections.getInsctance().getAllSections()
+        });
     }
 
     private toggleMenu() {
@@ -48,7 +53,7 @@ export default class NavMenu extends React.PureComponent<INavMenuProps, { isOpen
 
                         <div className={"collapse navbar-collapse " + (this.state.isOpen ? "show" : "")}>
                             <ul className="nav navbar-nav col-md-9 pull-right" id={this.props.id}>
-                                {this.props.sections.map((section, index) => {
+                                {this.state.sections!.map((section, index) => {
                                     return <li key={`${section.id}-${index}`}>
                                         <a href={`#${section.id}`}>
                                             <FontAwesomeIcon icon={section.icon} />

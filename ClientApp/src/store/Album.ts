@@ -31,8 +31,7 @@ export const actionCreators = {
             fetch(`album`)
                 .then(response =>
                     response.json() as Promise<any>)
-                .then(data =>
-                {
+                .then(data => {
                     dispatch({ type: 'RECEIVE_PHOTOES', page: page, album: album, postImageJson: data });
                 });
 
