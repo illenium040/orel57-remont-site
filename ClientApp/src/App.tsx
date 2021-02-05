@@ -9,8 +9,13 @@ import SiteAlbum from './components/views/SiteAlbum';
 const WOW = require('wowjs');
 
 export class App extends React.Component {
+    private wow: any;
     public componentDidMount() {
-        new WOW.WOW().init();
+        this.wow = new WOW.WOW().init();
+    }
+
+    public componentDidUpdate() {
+        this.wow.sync();
     }
 
     public render() {
