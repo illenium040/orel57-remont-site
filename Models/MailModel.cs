@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OrelRemontSite.Models
 {
-    public class EmailFormModel
+    public class MailModel
     {
         public string Name { get; set; }
         public string Email { get; set; }

@@ -7,6 +7,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using OrelRemontSite.Services;
+using OrelRemontSite.Services.Album;
+using OrelRemontSite.Services.Mail;
+
 namespace OrelRemontSite
 {
     public class Startup
@@ -21,6 +25,7 @@ namespace OrelRemontSite
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            AddCustomServices(services);
             services.AddControllersWithViews();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -63,6 +68,12 @@ namespace OrelRemontSite
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+        }
+
+        private void AddCustomServices(IServiceCollection services)
+        {
+            services.AddScoped<IAlbumService, PostImageService>()
+                .AddScoped<IMailService, GmailService>();
         }
     }
 }
