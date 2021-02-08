@@ -6,10 +6,6 @@ export interface ISectionInfo {
     icon: IconDefinition;
 }
 
-export class Section {
-
-}
-
 export class FirstPageSections {
 
     private static _instance: FirstPageSections;

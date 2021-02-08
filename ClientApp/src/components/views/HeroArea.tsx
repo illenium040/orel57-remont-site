@@ -2,14 +2,11 @@ import * as React from 'react';
 import { CompanyName } from '../../lib/constInfo';
 import { ISectionInfo } from '../../lib/Section';
 
-export interface HeroAreaProps {
-    sectionInfo: ISectionInfo;
-}
 
-class HeroArea extends React.Component<HeroAreaProps> {
+class HeroArea extends React.Component {
     public render() {
         return (
-            <section id={this.props.sectionInfo.id}>
+            <section id="hero-area">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

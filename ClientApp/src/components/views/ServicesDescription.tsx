@@ -1,14 +1,11 @@
 import React from 'react';
 import { ISectionInfo } from '../../lib/Section';
 
-export interface ServicesDescriptionProps {
-    sectionInfo: ISectionInfo;
-}
 
-class ServicesDescription extends React.Component<ServicesDescriptionProps> {
+class ServicesDescription extends React.Component {
     public render() {
         return (
-            <section id={this.props.sectionInfo.id}>
+            <section id="services">
                 <div className="container text-center">
                     <div className="row">
                         <h1 className="title">Чем мы занимаемся</h1>

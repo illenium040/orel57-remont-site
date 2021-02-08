@@ -3,10 +3,6 @@ import axios from 'axios';
 import $ from 'jquery';
 import { ISectionInfo } from '../../lib/Section';
 
-export interface ContactsProps {
-    sectionInfo: ISectionInfo;
-}
-
 interface ContactState {
     name: string;
     email: string;
@@ -15,11 +11,11 @@ interface ContactState {
     phoneNumber: string;
 }
 
-class Contacts extends React.Component<ContactsProps, ContactState> {
+class Contacts extends React.Component<{}, ContactState> {
 
     private readonly _emptyState: ContactState;
 
-    public constructor(props: ContactsProps) {
+    public constructor(props: {}) {
         super(props);
         this._emptyState = {
             email: "",
@@ -48,7 +44,7 @@ class Contacts extends React.Component<ContactsProps, ContactState> {
 
     public render() {
         return (
-            <section id={this.props.sectionInfo.id}>
+            <section id="contacts">
                 <div className="container text-center">
                     <div className="row">
                         <h1 className="title">Свяжитесь с нами</h1>

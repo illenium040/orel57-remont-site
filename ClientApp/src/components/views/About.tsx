@@ -1,14 +1,10 @@
 import React from 'react';
 import { ISectionInfo } from '../../lib/Section';
 
-export interface AboutProps {
-    sectionInfo: ISectionInfo;
-}
-
-class About extends React.Component<AboutProps> {
+class About extends React.Component {
     public render() {
         return (
-            <section id={this.props.sectionInfo.id} className="wow animated fadeInRight">
+            <section id="about" className="wow animated fadeInRight">
                 <div className="container">
                     <div className="row">
                         <h1 className="title">Немного о нас</h1>

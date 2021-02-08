@@ -9,14 +9,13 @@ import { FirstPageSections } from '../../lib/Section';
 
 class Home extends React.Component {
   public render() {
-    const fp = FirstPageSections.getInsctance();
     return (
-      <div id="home" data-spy="scroll" data-offset="20" data-target="#navbar">
-        <HeroArea sectionInfo={fp.getSection(HeroArea.name)!} />
-        <ServicesDescription sectionInfo={fp.getSection(ServicesDescription.name)!} />
-        <Portfolio sectionInfo={fp.getSection(Portfolio.name)!} />
-        <About sectionInfo={fp.getSection(About.name)!} />
-        <Contacts sectionInfo={fp.getSection(Contacts.name)!} />
+        <div id="home" data-spy="scroll" data-offset="20" data-target="#navbar">
+            <HeroArea />
+            <ServicesDescription />
+            <Portfolio />
+            <About />
+            <Contacts />
       </div>
     );
   }

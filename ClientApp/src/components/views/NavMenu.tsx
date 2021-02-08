@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CompanyName } from '../../lib/constInfo';
-import { ISectionInfo, FirstPageSections } from '../../lib/Section';
-
+import { ISectionInfo } from '../../lib/Section';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
 
 export interface NavMenuProps {
     id: string;
@@ -10,23 +10,26 @@ export interface NavMenuProps {
 
 export interface NavMenuState {
     isOpen: boolean;
-    sections?: ISectionInfo[];
 }
 
-export default class NavMenu extends React.PureComponent<NavMenuProps, NavMenuState> {
+export default class NavMenu extends React.Component<NavMenuProps, NavMenuState> {
+
+    private readonly sections: ISectionInfo[] = [{ id: "hero-area", icon: Icons.faHome, value: "Главная" },
+    { id: "services", icon: Icons.faCogs, value: "Услуги" },
+    { id: "porfolio", icon: Icons.faImage, value: "Фото" },
+    { id: "about", icon: Icons.faInfo, value: "О нас" },
+    { id: "contacts", icon: Icons.faEnvelope, value: "Контакты" }
+    ];
+
     public constructor(props: NavMenuProps) {
         super(props);
         this.state = {
-            isOpen: false,
-            sections: []
+            isOpen: false
         };
     }
 
     public componentDidMount() {
-        this.setState({
-            isOpen: false,
-            sections: FirstPageSections.getInsctance().getAllSections()
-        });
+        this.setState({ isOpen: false });
     }
 
     private toggleMenu() {
@@ -53,7 +56,7 @@ export default class NavMenu extends React.PureComponent<NavMenuProps, NavMenuSt
 
                         <div className={"collapse navbar-collapse " + (this.state.isOpen ? "show" : "")}>
                             <ul className="nav navbar-nav col-md-9 pull-right" id={this.props.id}>
-                                {this.state.sections!.map((section, index) => {
+                                {this.sections.map((section, index) => {
                                     return <li key={`${section.id}-${index}`}>
                                         <a href={`#${section.id}`}>
                                             <FontAwesomeIcon icon={section.icon} />

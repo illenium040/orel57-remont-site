@@ -17,7 +17,7 @@ const imagesLoaded = function (conatiner: any, cb: any) {
 export function gridify(container: any, optionsInput: any) {
     let $this = container,
         options = optionsInput || {},
-        indexOfSmallest = function (a) {
+        indexOfSmallest = function (a: any) {
             let lowest = 0;
             for (let i = 1, length = a.length; i < length; i++) {
                 if (a[i] < a[lowest]) lowest = i;
