@@ -3,6 +3,10 @@ import { gridify } from '../lib/gridify';
 import { LightboxWrapper } from './LightBoxWrapper';
 import $ from 'jquery';
 
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export interface IAlbumProps {
     images: Array<string>;
     containerId?: string;
@@ -36,8 +40,9 @@ class Album extends React.Component<IAlbumProps, IAlbumState> {
         this.onGridify();
     }
 
-    private onGridify() {
+    private async onGridify() {
         gridify($("#portfolioItems"), this._options);
+        await delay(200); //resize bug here
         $('.portfolio-item').css('visibility', 'visible');
     }
 
