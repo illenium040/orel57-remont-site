@@ -16,7 +16,7 @@ export default class NavMenu extends React.Component<NavMenuProps, NavMenuState>
 
     private readonly sections: ISectionInfo[] = [{ id: "hero-area", icon: Icons.faHome, value: "Главная" },
     { id: "services", icon: Icons.faCogs, value: "Услуги" },
-    { id: "porfolio", icon: Icons.faImage, value: "Фото" },
+        { id: "portfolio", icon: Icons.faImage, value: "Фото" },
     { id: "about", icon: Icons.faInfo, value: "О нас" },
     { id: "contacts", icon: Icons.faEnvelope, value: "Контакты" }
     ];

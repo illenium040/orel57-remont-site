@@ -159,3 +159,12 @@
     width: 0;
     z-index: -1;
 }
+
+@media (max-width: 360px) {
+    .btn-lg {
+        font-size: 10px!important;
+    }
+    .company-name {
+        font-size: 14px!important;
+    }
+}
