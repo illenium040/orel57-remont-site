@@ -717,7 +717,7 @@ function($) {
         if (!isActive) {
             if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
                 // if mobile we use a backdrop because click events don't delegate
-                $('<div class="dropdown-backdrop"/>').insertAfter($(this)).on('click', clearMenus)
+                $('<div className="dropdown-backdrop"/>').insertAfter($(this)).on('click', clearMenus)
             }
 
             var relatedTarget = { relatedTarget: this }
@@ -1000,7 +1000,7 @@ function($) {
         if (this.isShown && this.options.backdrop) {
             var doAnimate = $.support.transition && animate
 
-            this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
+            this.$backdrop = $('<div className="modal-backdrop ' + animate + '" />')
                 .appendTo(this.$body)
 
             this.$element.on('click.dismiss.bs.modal', $.proxy(function(e) {
@@ -1151,7 +1151,7 @@ function($) {
         animation: true,
         placement: 'top',
         selector: false,
-        template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+        template: '<div className="tooltip" role="tooltip"><div className="tooltip-arrow"></div><div className="tooltip-inner"></div></div>',
         trigger: 'hover focus',
         title: '',
         delay: 0,
@@ -1606,7 +1606,7 @@ function($) {
         placement: 'right',
         trigger: 'click',
         content: '',
-        template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+        template: '<div className="popover" role="tooltip"><div className="arrow"></div><h3 className="popover-title"></h3><div className="popover-content"></div></div>'
     })
 
 

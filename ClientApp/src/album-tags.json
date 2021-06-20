@@ -29,10 +29,15 @@
             "tagId": "facade-works",
             "album": "02fpQ5J"
         },
-        {
-            "tagName": "Строительство",
-            "tagId": "buildings",
-            "album": "nD7Gk1Q"
-        }
+      {
+        "tagName": "Строительство",
+        "tagId": "buildings",
+        "album": "nD7Gk1Q"
+      },
+      {
+        "tagName": "Балконы и лоджи",
+        "tagId": "balcon",
+        "album": "GbYT67F"
+      }
     ]
 }
