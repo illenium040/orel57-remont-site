@@ -34,8 +34,11 @@ class AlbumPageController {
         this._offset = offset;
         this._albumTags = new AlbumTagController();
         this._currentAlbumPage = 1;
-        this._currentAlbum = this._albumTags.albumTags[0].album;
+        let storedTag = localStorage.getItem('albumTag');
         this._onScrollAction = () => { };
+        if (storedTag != '' && storedTag != undefined && storedTag != null)
+            this._currentAlbum = storedTag;
+        else this._currentAlbum = this._albumTags.albumTags[0].album;
     }
 
     public addScrollAction(action: Function) {
@@ -61,6 +64,10 @@ class AlbumPageController {
         return this._albumTags.albumTags;
     }
 
+    public get currentTag(): string {
+        return this._albumTags.getTagByAlbumId(this._currentAlbum);
+    }
+
     public get page(): number {
         return this._currentAlbumPage;
     }
@@ -79,6 +86,7 @@ export interface SiteAlbumState {
     json?: PostImageJson[];
     isLoading?: boolean;
     images?: Array<string>;
+    isTopBtn?: boolean;
 }
 
 class SiteAlbum extends React.Component<{}, SiteAlbumState> {
@@ -90,18 +98,28 @@ class SiteAlbum extends React.Component<{}, SiteAlbumState> {
         this.state = {
             isLoading: true,
             json: [],
-            images: []
+            images: [],
+            isTopBtn: false
         };
         this._albumPages = new AlbumPageController(2000);
         this._albumPages.addScrollAction(this.ensureDataFetched.bind(this));
     }
 
+    private onScroll(event: any) {
+        if (window.scrollY > 100)
+            this.setState({ isTopBtn: true });
+        else this.setState({ isTopBtn: false });
+    }
+
     public async componentDidMount() {
+        window.addEventListener('scroll', this.onScroll.bind(this));
         await this.ensureDataFetched();
+        this.activateButton(this._albumPages.currentTag);
     }
 
     public componentWillUnmount() {
         this._albumPages.scrollWindowEvent(false);
+        window.removeEventListener('scroll', this.onScroll.bind(this));
     }
 
     private async ensureDataFetched() {
@@ -119,17 +137,29 @@ class SiteAlbum extends React.Component<{}, SiteAlbumState> {
         });
     }
 
+    private activateButton(tag: string) {
+        $(`#${tag}`)
+            .removeClass("btn-common")
+            .addClass("btn-primary");
+    }
+
     private loadAlbum(event: React.MouseEvent) {
         $('#tagButtonsContainer .btn-primary')
             .removeClass("btn-primary")
             .addClass("btn-common");
-        $(event.currentTarget)
-            .removeClass("btn-common")
-            .addClass("btn-primary");
+        this.activateButton(event.currentTarget.id);
         this.setState({ isLoading: true, json: [], images: [] });
         this._albumPages.reset(event.currentTarget.id);
         this.ensureDataFetched();
     }
+
+    private scrollToTop() {
+        window.scroll({
+            behavior: "smooth",
+            top: 0
+        });
+    }
+
 
     private renderTagsButtons() {
         return (
@@ -169,6 +199,9 @@ class SiteAlbum extends React.Component<{}, SiteAlbumState> {
                         <img src={require("../../assets/img/loader.svg")} alt="" />
                     </div>
                 }
+                <a className="arrow-up-anchor" onClick={this.scrollToTop}>
+                    {this.state.isTopBtn ? < img src={require("../../assets/img/up-arrow-button-svgrepo-com.svg")} alt="" /> : null }
+                </a>
             </React.Fragment>
         );
     }
